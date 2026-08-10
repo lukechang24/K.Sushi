@@ -3,7 +3,6 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react"
 import Category from "./Category/category"
 import Modal from "./Modal/modal"
 
-// import salmon from "../../Images/salmon nigiri.jpg"
 import salmon from "../../Images/salmon nigiri.jpg"
 import tuna from "../../Images/tuna lovers roll.jpg"
 import chicken from "../../Images/chicken bento.jpg"
@@ -20,8 +19,9 @@ const Menu = ({ data, loading, menuRef }) => {
 	const [activeSub, setActiveSub] = useState("")
 	const [selectedItem, setSelectedItem] = useState(null)
 	const [showHint, setShowHint] = useState(true)
-	
+
 	const hasMounted = useRef(false)
+	const initialCategory = useRef(null)
 	const categoryListRef = useRef(0)
 	const subRefs = useRef([])
 	const subOffsets = useRef([])
@@ -67,7 +67,9 @@ const Menu = ({ data, loading, menuRef }) => {
 
 	useEffect(() => {
 		if (!loading) {
-			setActiveTab(Object.keys(data)[0])
+			const first = Object.keys(data)[0]
+			setActiveTab(first)
+			initialCategory.current = first
 		}
 	}, [loading, data])
 
@@ -94,7 +96,6 @@ const Menu = ({ data, loading, menuRef }) => {
 			if (!subOffsets.current.length) return
 
 			if (scrollingDown) {
-				// Scroll down: last subcategory whose top <= scroll
 				let current = ""
 				for (let i = 0; i < subOffsets.current.length; i++) {
 					if (subOffsets.current[i] - 90 <= scrollPos) {
@@ -103,7 +104,6 @@ const Menu = ({ data, loading, menuRef }) => {
 				}
 				setActiveSub(current)
 			} else {
-				// Scroll up: first subcategory whose top < scroll, or previous one
 				let current = ""
 				for (let i = subOffsets.current.length - 1; i >= 0; i--) {
 					if (subOffsets.current[i] - 90 <= scrollPos) {
@@ -120,20 +120,16 @@ const Menu = ({ data, loading, menuRef }) => {
 	}, [menuRef])
 
 	useLayoutEffect(() => {
-  const handleResize = () => {
-    // subRefs.current.forEach((ref, i) => {
-    //   subOffsets.current[i] = ref.offsetTop
-    // })
-		if (window.innerWidth !== lastWindowWidth.current) {
-			lastWindowWidth.current = window.innerWidth
-			// Only reset if actual width changed
-			setActiveTab(null)
-			setActiveSub(null)
+		const handleResize = () => {
+			if (window.innerWidth !== lastWindowWidth.current) {
+				lastWindowWidth.current = window.innerWidth
+				setActiveTab(null)
+				setActiveSub(null)
+			}
 		}
-  }
-	
-  window.addEventListener("resize", handleResize)
-  return () => window.removeEventListener("resize", handleResize)
+
+		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
 	}, [])
 
 	return(
@@ -159,7 +155,6 @@ const Menu = ({ data, loading, menuRef }) => {
 												scrollToAccordion(true)
 											} else {
 												handleTab(category)
-												setTimeout(() => scrollToAccordion(true), 375)
 											}
 										}}
 									>
@@ -188,6 +183,7 @@ const Menu = ({ data, loading, menuRef }) => {
 									accordionRef={activeAccordionRef}
 									scrollToAccordion={scrollToAccordion}
 									hasMounted={hasMounted}
+									initialCategory={initialCategory}
 									showHint={showHint}
 								/>)
 						})}

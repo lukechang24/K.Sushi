@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion"
 import ItemCard from "../ItemCard/itemCard"
 import * as S from "./category.styles"
 
-const Category = ({title, items, categoryIndex, categoryListRef, handleItemClick, closeModal, isOpen, handleTab, activeSub, subRefs, subOffsets, accordionRef, scrollToAccordion, hasMounted, showHint }) => {
+const Category = ({title, items, categoryIndex, categoryListRef, handleItemClick, closeModal, isOpen, handleTab, activeSub, subRefs, subOffsets, accordionRef, scrollToAccordion, hasMounted, initialCategory, showHint }) => {
 
 	const setSubRef = (el, i) => {
 		if (el && isOpen) {
@@ -54,12 +54,12 @@ const Category = ({title, items, categoryIndex, categoryListRef, handleItemClick
 					style={{ overflow: "hidden", marginBottom: isOpen && "1rem" }}
 					onAnimationComplete={() => {
 						if (!isOpen) return
-						if (!hasMounted.current) {
+						populateSubRefOffset()
+						if (title === initialCategory.current && !hasMounted.current) {
 							hasMounted.current = true
-							populateSubRefOffset()
 							return
 						}
-						populateSubRefOffset()
+						hasMounted.current = true
 						scrollToAccordion()
 					}}
 				>

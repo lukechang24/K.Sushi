@@ -8,9 +8,9 @@ const theme = {
 		hover: "#666"
   },
   fonts: {
-    main: "'Montserrat', sans-serif",
-		heading: "'Archivo', sans-serif",
-		secondary: "'DM Sans', sans-serif"
+    main: "var(--font-montserrat), sans-serif",
+    heading: "var(--font-archivo), sans-serif",
+    secondary: "var(--font-dm-sans), sans-serif"
   },
   spacing: {
     pagePadding: {

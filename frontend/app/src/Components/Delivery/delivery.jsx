@@ -8,7 +8,7 @@ const Delivery = ({ deliveryRef }) => {
 			<S.DeliveryTitle>DELIVERY</S.DeliveryTitle>
 			<S.DeliveryContainer>
 				<S.DeliveryCard 
-					href="https://www.ubereats.com/store/sushi-gallery/o3Ph-roTR1SnxAhvKAEIkA"
+					href="https://www.ubereats.com/store/ksushi/o3Ph-roTR1SnxAhvKAEIkA"
 					target="_blank"
 				>
 					<S.DeliveryLogo
@@ -20,7 +20,7 @@ const Delivery = ({ deliveryRef }) => {
 				</S.DeliveryCard>
 
 				<S.DeliveryCard 
-					href="https://www.grubhub.com/restaurant/sushi-gallery-16436-norwalk-blvd-cerritos/2053881"
+					href="https://www.grubhub.com/restaurant/ksushi-16436-norwalk-blvd-cerritos/2053881"
 					target="_blank"
 				>
 					<S.DeliveryLogo 

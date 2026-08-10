@@ -87,7 +87,7 @@ export const ItemList = styled(motion.div)`
 
 export const SubcategoryTitle = styled.h3`
 	position: ${props => props.$sticky ? "fixed" : "relative"};
-	top: ${props => props.$sticky ? "83px" : "0"};
+	top: ${props => props.$sticky ? "84px" : "0"};
 	left: 0;
 	width: 100%;
 	font-size: 1.25rem;
@@ -97,7 +97,7 @@ export const SubcategoryTitle = styled.h3`
 	box-shadow: ${props => props.$sticky ? "none" : "none"};
 	z-index: 5;
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
-		top: ${props => props.$sticky ? "97px" : "0"};
+		top: ${props => props.$sticky ? "98px" : "0"};
 		font-size: 1.5rem;
 		padding: ${({ theme, $sticky }) => $sticky ? `10px ${theme.spacing.pagePadding.tablet} 10px` : "10px 0 10px"};
 	}
@@ -107,7 +107,7 @@ export const SubcategoryTitle = styled.h3`
 		padding: ${({ theme, $sticky }) => $sticky ? `10px ${theme.spacing.pagePadding.desktop} 10px` : "10px 0 10px"};
 	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
-		top: ${props => props.$sticky ? "89px" : "0"};
+		top: ${props => props.$sticky ? "90px" : "0"};
 		left: 50%;
 		width: ${({ theme }) => theme.breakpoints.laptop};
 		transform: translateX(-50%);
