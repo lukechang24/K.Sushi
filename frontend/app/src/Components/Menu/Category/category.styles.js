@@ -3,15 +3,6 @@ import { motion } from "framer-motion"
 import { RxCaretRight, RxCaretDown, RxCaretUp } from "react-icons/rx"
 import { FaStar } from "react-icons/fa"
 
-// const fade = keyframes`
-// 	from {
-// 		transform: translateY(-100px);
-// 	}
-// 	to {
-// 		transform: translateY(0);
-// 	}
-// `;
-
 export const CategoryContainer = styled.div`
 	display: flex;
 	flex-direction: column;
