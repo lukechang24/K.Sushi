@@ -85,7 +85,7 @@ const Menu = ({ data, loading, menuRef }) => {
 				triggeredHintRef.current = true
 				setTimeout(() => {
 					setShowHint(false)
-				}, 5000)
+				}, 1000)
 			}
 
 			if (menu && (scrollPos > menu.offsetTop + menu.offsetHeight - 130)) {
