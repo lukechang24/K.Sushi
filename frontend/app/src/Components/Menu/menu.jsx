@@ -155,6 +155,7 @@ const Menu = ({ data, loading, menuRef }) => {
 												scrollToAccordion(true)
 											} else {
 												handleTab(category)
+												setTimeout(() => scrollToAccordion(true), 375)
 											}
 										}}
 									>

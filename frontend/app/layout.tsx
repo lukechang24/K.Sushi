@@ -32,9 +32,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${archivo.variable} ${dmSans.variable} ${montserrat.variable}`}>
       <body className="min-h-full flex flex-col">
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         <GoogleTagManager gtmId="GTM-M7XCCXGB" />
         <GoogleAnalytics gaId="G-QRNLGYCKEF" />
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   );
