@@ -34,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <GoogleTagManager gtmId="GTM-M7XCCXGB" />
         <GoogleAnalytics gaId="G-QRNLGYCKEF" />
+        <GoogleAnalytics gaId="AW-18404960780" />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
