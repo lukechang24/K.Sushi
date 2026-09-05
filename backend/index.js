@@ -17,7 +17,7 @@ const auth = new google.auth.GoogleAuth({
 
 const sheets = google.sheets({ version: "v4", auth });
 
-const spreadsheetId = "1JLl_FF37f-jgml5r3URjhHFePvDbPm4lAedjiXDux5E"; // paste your Google Sheet ID here
+const spreadsheetId = "1JLl_FF37f-jgml5r3URjhHFePvDbPm4lAedjiXDux5E";
 
 async function fetchAllSheetsData() {
   // Step 1: Get all sheet names

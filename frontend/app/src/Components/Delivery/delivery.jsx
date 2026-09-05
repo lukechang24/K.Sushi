@@ -25,7 +25,7 @@ const Delivery = ({ deliveryRef }) => {
 				>
 					<S.DeliveryLogo 
 						$color="white"
-						$padding="2em"
+						$padding="2.2em 0"
 						src={grubhubLogo.src}
 					/>
 					<S.DeliveryButton>Order Now</S.DeliveryButton>

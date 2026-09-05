@@ -65,6 +65,8 @@ export const DeliveryCard = styled.a`
 
 export const DeliveryLogo = styled.img`
 	width: 13rem;
+	height: 6rem;
+	object-fit: contain;
 	background-color: ${({ $color }) => $color};
 	padding: ${({ $padding }) => $padding};
 	border-radius: 8px;

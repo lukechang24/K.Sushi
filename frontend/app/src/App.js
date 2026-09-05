@@ -4,7 +4,8 @@ import { ThemeProvider, createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 
 import Navbar from "./Components/Navbar/navbar"
-import Homepage from "./Components/Homepage/homepage";
+import Homepage from "./Components/Homepage/homepage"
+import ReviewsCarousel from "./Components/ReviewsCarousel/reviewsCarousel"
 import Menu from "./Components/Menu/menu"
 import Delivery from "./Components/Delivery/delivery"
 import About from "./Components/About/about"
@@ -12,23 +13,23 @@ import theme from "./theme"
 
 const GlobalStyle = createGlobalStyle`
 	*, *::before, *::after {
-    box-sizing: border-box;
-  }
+    	box-sizing: border-box;
+  	}
 	html {
-  	scroll-behavior: smooth;
+  		scroll-behavior: smooth;
 	}
 		
-  body, h1, h2, h3, p, ul, ol, button {
-    margin: 0;
-    padding: 0;
-		font-weight: normal;
-  }
+	body, h1, h2, h3, p, ul, ol, button {
+		margin: 0;
+		padding: 0;
+			font-weight: normal;
+	}
 
-  body {
-    font-family: ${props => props.theme.fonts.main};
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
-  }
+	body {
+		font-family: ${props => props.theme.fonts.main};
+		background-color: ${props => props.theme.colors.background};
+		color: ${props => props.theme.colors.text};
+	}
 
 	#root {
 		display: flex;
@@ -44,18 +45,22 @@ const NavbarSpace = styled.div`
 const LineBreak = styled.hr`
 	width: 100%;
 	border: none;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.2);
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		transparent,
+		${props => props.theme.colors.primary}66,
+		transparent
+	);
 `
 
-const App = ({ initialData }) => {
+const App = ({ menuData, reviewsData }) => {
 	const [resizeKey, setResizeKey] = useState(0)
-	const [data] = useState(initialData) // already populated — no null, no loading
 
 	const menuRef = useRef(0)
 	const deliveryRef = useRef(0)
 	const aboutRef = useRef(0)
-
+	console.log(reviewsData, "these are reivews")
 	const scrollToCorrectHeight = (e, el) => {
 		e.preventDefault()
 		window.scrollTo({ top: el.current.offsetTop - 50, behavior: 'smooth' })
@@ -77,7 +82,10 @@ const App = ({ initialData }) => {
 				<Navbar menuRef={menuRef} deliveryRef={deliveryRef} aboutRef={aboutRef} scrollToCorrectHeight={scrollToCorrectHeight} key={resizeKey}/>
 				<NavbarSpace></NavbarSpace>
 				<Homepage menuRef={menuRef} scrollToCorrectHeight={scrollToCorrectHeight}/>
-				<Menu data={data} loading={false} menuRef={menuRef}/>
+				<LineBreak />
+				<ReviewsCarousel data={reviewsData} />
+				<LineBreak />
+				<Menu data={menuData} loading={false} menuRef={menuRef}/>
 				<LineBreak />
 				<Delivery deliveryRef={deliveryRef}/>
 				<LineBreak />

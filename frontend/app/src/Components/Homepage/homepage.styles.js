@@ -4,16 +4,16 @@ import heroImage from "../../Images/ksushi_out.jpg"
 
 export const HomepageSection = styled.div`
 	width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-image: ${({ theme }) => `linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.65)`}), url(${heroImage.src});  
 	background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+	background-size: cover;
+	background-position: 50% 50%;
 	background-color: ${({ theme }) => theme.colors.background};
-  text-align: center;
+  	text-align: center;
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
 		background-position: 50% 10%;
 	}
@@ -109,6 +109,6 @@ export const HomepageAddress = styled.address`
 
 export const HomepageSeperator = styled.div`
 	width: 100%;
-	height: 3rem;
+	height: 5rem;
 	background-color: #111;
 `
