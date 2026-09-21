@@ -60,7 +60,6 @@ const App = ({ menuData, reviewsData }) => {
 	const menuRef = useRef(0)
 	const deliveryRef = useRef(0)
 	const aboutRef = useRef(0)
-	console.log(reviewsData, "these are reivews")
 	const scrollToCorrectHeight = (e, el) => {
 		e.preventDefault()
 		window.scrollTo({ top: el.current.offsetTop - 50, behavior: 'smooth' })
