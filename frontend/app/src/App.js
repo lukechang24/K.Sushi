@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
 `
 const NavbarSpace = styled.div`
 	width: 100%;
-	height: 84.59px;
+	height: 71.84px;
 `
 
 const LineBreak = styled.hr`
@@ -81,7 +81,7 @@ const App = ({ menuData, reviewsData }) => {
 				<Navbar menuRef={menuRef} deliveryRef={deliveryRef} aboutRef={aboutRef} scrollToCorrectHeight={scrollToCorrectHeight} key={resizeKey}/>
 				<NavbarSpace></NavbarSpace>
 				<Homepage menuRef={menuRef} scrollToCorrectHeight={scrollToCorrectHeight}/>
-				<LineBreak />
+				{/* <LineBreak /> */}
 				<ReviewsCarousel data={reviewsData} />
 				<LineBreak />
 				<Menu data={menuData} loading={false} menuRef={menuRef}/>

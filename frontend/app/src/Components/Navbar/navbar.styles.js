@@ -24,11 +24,8 @@ export const NavbarSection = styled.div`
 	padding: ${({ theme }) => theme.spacing.navbarPadding.mobile} ${({ theme }) => theme.spacing.pagePadding.mobile};
 	box-sizing: border-box;
 	z-index: 30;
-	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
-		padding: ${({ theme }) => theme.spacing.navbarPadding.mobile} ${({ theme }) => theme.spacing.pagePadding.mobile};
-	}
-	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		padding: ${({ theme }) => theme.spacing.navbarPadding.tablet} ${({ theme }) => theme.spacing.pagePadding.tablet};
+	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+		padding: 0.75rem 1rem;
 	}
 `
 
@@ -49,13 +46,13 @@ export const NavbarLogo = styled.img`
 		width: 12rem;
 	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
-		width: 13rem;
+		width: 10rem;
 	}
 `
 
 export const NavbarSlogan = styled.p`
 	font-family: ${({ theme }) => theme.fonts.main};
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	font-weight: 400;
 	margin-top: 5px;
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -67,6 +64,7 @@ export const NavbarSlogan = styled.p`
 		font-size: 0.875rem;
 	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+		font-size: 0.8rem;
 	}
 `
 
@@ -100,7 +98,7 @@ export const NavLink = styled.button`
   }
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
-		font-size: 1.25rem;
+		font-size: 1rem;
 	}
 `
 

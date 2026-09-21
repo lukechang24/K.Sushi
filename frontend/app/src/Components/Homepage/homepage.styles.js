@@ -33,14 +33,9 @@ export const HomepageTagline = styled.p`
 		font-size: 1.5rem;
 		margin: 10rem 0 4rem;
 	}
-	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		margin: 8rem 0 4rem;
-	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+		margin: 6rem 0 4rem;
 		font-size: 2rem;
-	}
-	@media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-		font-size: 2.5rem;
 	}
 `
 
@@ -66,8 +61,11 @@ export const HomepageMenuLink = styled.a`
 	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		margin: 0 0 12rem;
 	}
+	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+		margin: 0 0 12rem;
+	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-		margin: 0 0 14rem;
+		margin: 0 0 12rem;
 	}
 `
 
@@ -85,11 +83,10 @@ export const HomepageInfoContainer = styled.div`
 	padding: 0 1rem;
 	margin-bottom: 1rem;
 	@media (min-width: ${({ theme }) => theme.breakpoints.mobile}) {
-		font-size: 1rem;
 		margin-bottom: 2rem;
 	}
-	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		font-size: 1.25rem;
+	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+		font-size: 1rem;
 	}
 `
 
@@ -111,4 +108,16 @@ export const HomepageSeperator = styled.div`
 	width: 100%;
 	height: 5rem;
 	background-color: #111;
+`
+
+export const Banner = styled.div`
+	position: absolute;
+	width: 100vw;
+	top: 120px;
+	background-color: rgb(0,0,0, 0.5);
+	padding: 0.5rem ${({ theme }) => theme.spacing.pagePadding.mobile};
+	color: yellow;
+	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+		top: 100px;
+	}
 `

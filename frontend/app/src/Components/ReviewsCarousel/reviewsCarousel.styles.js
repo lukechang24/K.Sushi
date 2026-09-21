@@ -23,9 +23,12 @@ export const CarouselSection = styled.section`
 export const CarouselTitle = styled.h2`
 	font-family: ${props => props.theme.fonts.heading};
 	color: ${props => props.theme.colors.primary};
-	font-size: 1.25rem;
+	font-size: 1rem;
 	letter-spacing: 0.15em;
 	margin: 1rem 0 2rem;
+	@media (min-width: ${props => props.theme.breakpoints.laptop}) {
+		font-size: 1.25rem;
+	}
 `
 
 export const CarouselTrack = styled.div`
