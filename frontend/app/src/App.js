@@ -8,6 +8,7 @@ import Homepage from "./Components/Homepage/homepage"
 import ReviewsCarousel from "./Components/ReviewsCarousel/reviewsCarousel"
 import Menu from "./Components/Menu/menu"
 import Delivery from "./Components/Delivery/delivery"
+import MailingList from "./Components/MailingList/mailingList"
 import About from "./Components/About/about"
 import theme from "./theme"
 
@@ -87,6 +88,8 @@ const App = ({ menuData, reviewsData }) => {
 				<Menu data={menuData} loading={false} menuRef={menuRef}/>
 				<LineBreak />
 				<Delivery deliveryRef={deliveryRef}/>
+				{/* <LineBreak /> */}
+				{/* <MailingList /> */}
 				<LineBreak />
 				<About aboutRef={aboutRef}/>
 			</ThemeProvider>

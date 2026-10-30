@@ -9,7 +9,7 @@ const Delivery = ({ deliveryRef }) => {
 			<S.DeliveryTitle>DELIVERY</S.DeliveryTitle>
 			<S.DeliveryContainer>
 				<S.DeliveryCard 
-					href="https://www.doordash.com/store/k.-sushi-cerritos-52196799/121226946/"
+					href="https://www.doordash.com/store/k.-sushi-cerritos-52196799/"
 					target="_blank"
 				>
 					<S.DeliveryLogo
