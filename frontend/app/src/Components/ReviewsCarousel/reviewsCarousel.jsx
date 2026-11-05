@@ -20,7 +20,6 @@ const ReviewsCarousel = ({ data }) => {
 
 		const handleChange = (e) => setPrefersReducedMotion(e.matches)
 		mediaQuery.addEventListener("change", handleChange)
-		console.log(reviews, "reviews")
 		return () => mediaQuery.removeEventListener("change", handleChange)
 	}, [])
 
