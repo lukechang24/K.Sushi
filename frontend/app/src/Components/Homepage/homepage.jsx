@@ -5,7 +5,7 @@ const Homepage = ({ menuRef, scrollToCorrectHeight }) => {
 	return(
 		<S.HomepageSection>
 			{/* <S.Banner>We will now be closed on Tuesdays and open on Sundays beginning October 20, 2026</S.Banner> */}
-			{/* <S.Banner>On November 26th, we will be open for takeout only from 10:30 AM to 12:00 PM, and closed for the remainder of the day.</S.Banner> */}
+			<S.Banner>On Thanksgiving Day (November 26th), we will accept takeout pickups until 12:00 PM. We will be closed for the remainder of the day.</S.Banner>
 			<S.HomepageTagline>Family-owned and operated since 2005</S.HomepageTagline>
 			<S.HomepageMenuLink onClick={(e) => scrollToCorrectHeight(e, menuRef)} href="#menu">
 				VIEW MENU
