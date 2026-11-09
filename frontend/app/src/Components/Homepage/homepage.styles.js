@@ -113,10 +113,13 @@ export const HomepageSeperator = styled.div`
 export const Banner = styled.div`
 	position: absolute;
 	width: 100vw;
-	top: 120px;
+	top: 90px;
 	background-color: rgb(0,0,0, 0.5);
 	padding: 0.5rem ${({ theme }) => theme.spacing.pagePadding.mobile};
 	color: yellow;
+	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		top: 130px;
+	}
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
 		top: 100px;
 	}
