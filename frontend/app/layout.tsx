@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "K. Sushi | Cerritos, CA",
+    title: "K. Sushi | Family Sushi in Cerritos, CA",
     description: "Family-owned sushi restaurant in Cerritos, CA, serving fresh rolls, sushi, and Korean-inspired specialties.",
     url: "https://ksushi.menu",
     siteName: "K. Sushi",
-    images: [{ url: "/android-chrome-512x512.png", width: 512, height: 512, alt: "K. Sushi logo" }],
+    images: [{ url: "/og-image.jpg", width: 512, height: 512, alt: "Cerritos Roll" }],
     locale: "en_US",
     type: "website",
   },
