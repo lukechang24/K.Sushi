@@ -2,21 +2,38 @@
 import * as S from "./homepage.styles"
 
 const Homepage = ({ menuRef, scrollToCorrectHeight }) => {
-	return(
+	return (
 		<S.HomepageSection>
-			{/* <S.Banner>We will now be closed on Tuesdays and open on Sundays beginning October 20, 2026</S.Banner> */}
-			<S.Banner>On Thanksgiving Day (November 26th), we will accept takeout pickups until 12:00 PM. We will be closed for the remainder of the day.</S.Banner>
-			<S.HomepageTagline>Family-owned and operated since 2005</S.HomepageTagline>
-			<S.HomepageMenuLink onClick={(e) => scrollToCorrectHeight(e, menuRef)} href="#menu">
-				VIEW MENU
-				<S.DownArrow></S.DownArrow>
+			<S.Banner>
+				On Thanksgiving Day (November 26th), we will accept pickups for takeout
+				until 12:00 PM. We will be closed for the remainder of the day.
+			</S.Banner>
+
+			<S.HomepageTagline>
+				Sushi in Cerritos
+				<S.TaglineSub>Family-owned and operated since 2005</S.TaglineSub>
+			</S.HomepageTagline>
+
+			<S.HomepageMenuLink
+				href="#menu"
+				onClick={(e) => scrollToCorrectHeight(e, menuRef)}
+			>
+				View Menu
+				<S.DownArrow />
 			</S.HomepageMenuLink>
+
 			<S.HomepageInfoContainer>
-				<S.HomepageAddress>16436 Norwalk Blvd, Cerritos, CA 90703</S.HomepageAddress>
-				<S.HomepageHours>Mon – Sat: 11:30AM – 2:30PM & 5:00PM – 9:00PM | Sun: Closed</S.HomepageHours>
-				<S.HomepagePhone href="tel:+15629266556">+1 (562) 926-6556</S.HomepagePhone>
+				<S.HomepageAddress>
+					16436 Norwalk Blvd, Cerritos, CA 90703
+				</S.HomepageAddress>
+				<S.HomepageHours>
+					Mon &ndash; Sat: 11:30AM &ndash; 2:30PM &amp; 5:00PM &ndash; 9:00PM |
+					Sun: Closed
+				</S.HomepageHours>
+				<S.HomepagePhone href="tel:+15629266556">
+					+1 (562) 926-6556
+				</S.HomepagePhone>
 			</S.HomepageInfoContainer>
-			{/* <S.HomepageSeperator></S.HomepageSeperator> */}
 		</S.HomepageSection>
 	)
 }
