@@ -8,7 +8,7 @@ export const HomepageSection = styled.section`
 
 	position: relative;
 	width: 100%;
-	min-height: 75svh;
+	min-height: 92svh;
 
 	display: flex;
 	flex-direction: column;
@@ -17,14 +17,14 @@ export const HomepageSection = styled.section`
 	text-align: center;
 
 	padding: calc(var(--nav-height) + 4.5rem)
-		${({ theme }) => theme.spacing.pagePadding.mobile} 2rem;
+		${({ theme }) => theme.spacing.pagePadding.mobile} 1.75rem;
 
 	background-color: ${({ theme }) => theme.colors.background};
 	background-image: linear-gradient(
 			to bottom,
 			rgba(0, 0, 0, 0.55) 0%,
-			rgba(0, 0, 0, 0.25) 28%,
-			rgba(0, 0, 0, 0.72) 100%
+			rgba(0, 0, 0, 0.2) 30%,
+			rgba(0, 0, 0, 0.78) 100%
 		),
 		url(${heroImage.src});
 	background-repeat: no-repeat;
@@ -34,20 +34,20 @@ export const HomepageSection = styled.section`
 	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		--nav-height: 130px;
 		padding: calc(var(--nav-height) + 4rem)
-			${({ theme }) => theme.spacing.pagePadding.tablet} 2.5rem;
+			${({ theme }) => theme.spacing.pagePadding.tablet} 2.25rem;
 		background-position: 50% 50%;
 	}
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
 		--nav-height: 100px;
 		padding: calc(var(--nav-height) + 4rem)
-			${({ theme }) => theme.spacing.pagePadding.desktop} 3rem;
+			${({ theme }) => theme.spacing.pagePadding.desktop} 2.5rem;
 	}
 `
 
 export const Banner = styled.div`
 	position: absolute;
-	top: 50px;
+	top: calc(var(--nav-height) - 40px);
 	left: 0;
 	width: 100%;
 
@@ -55,47 +55,57 @@ export const Banner = styled.div`
 
 	background-color: rgba(0, 0, 0, 0.62);
 	backdrop-filter: blur(4px);
-	border-top: 1px solid rgba(240, 165, 0, 0.3);
-	border-bottom: 1px solid rgba(240, 165, 0, 0.3);
+	border-top: 1px solid rgba(240, 165, 0, 0.28);
+	border-bottom: 1px solid rgba(240, 165, 0, 0.28);
 
 	color: ${({ theme }) => theme.colors.primary};
 	font-family: ${({ theme }) => theme.fonts.secondary};
 	font-size: 0.8125rem;
 	font-weight: 500;
 	line-height: 1.5;
-	letter-spacing: 0.01em;
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
 		padding: 0.625rem ${({ theme }) => theme.spacing.pagePadding.tablet};
-		font-size: 0.875rem;
+	}
+`
+
+/* ---- centre cluster ---------------------------------------------------- */
+
+export const HeroContent = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+
+	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		gap: 2rem;
 	}
 `
 
 export const HomepageTagline = styled.h1`
 	display: flex;
 	flex-direction: column;
-	gap: 0.75rem;
-	margin: 0 0 2.75rem;
-	max-width: 20ch;
+	gap: 0.6rem;
+	margin: 0;
+	max-width: 18ch;
 
 	color: ${({ theme }) => theme.colors.text};
-	font-family: ${({ theme }) => theme.fonts.main};
+	font-family: ${({ theme }) => theme.fonts.heading};
 	font-size: clamp(2.25rem, 7vw, 3.75rem);
 	font-weight: 600;
-	line-height: 1.08;
+	line-height: 1.05;
 	letter-spacing: -0.02em;
-	text-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
+	text-shadow: 0 4px 28px rgba(0, 0, 0, 0.9);
 
 	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-		max-width: 24ch;
-		margin: 0 0 3.25rem;
+		max-width: 22ch;
 	}
 `
 
 export const TaglineSub = styled.span`
 	color: ${({ theme }) => theme.colors.textSecondary};
 	font-family: ${({ theme }) => theme.fonts.main};
-	font-size: clamp(0.9375rem, 2.2vw, 1.25rem);
+	font-size: clamp(0.9375rem, 2vw, 1.1875rem);
 	font-weight: 300;
 	letter-spacing: 0.02em;
 	line-height: 1.5;
@@ -136,46 +146,57 @@ export const HomepageMenuLink = styled.a`
 	}
 `
 
+
 export const DownArrow = styled(IoIosArrowDown)`
 	font-size: 1rem;
 `
+
+/* ---- bottom info bar --------------------------------------------------- */
 
 export const HomepageInfoContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.4rem;
+	gap: 0.3rem;
 
 	margin-top: auto;
-	padding-top: 4rem;
+	padding: 0.85rem 1.25rem;
 
-	color: ${({ theme }) => theme.colors.text};
+	background-color: rgba(0, 0, 0, 0.38);
+	backdrop-filter: blur(6px);
+	border: 1px solid rgba(245, 245, 245, 0.1);
+	border-radius: 4px;
+
+	color: ${({ theme }) => theme.colors.textSecondary};
 	font-size: 0.8125rem;
-	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+	font-weight: 300;
+	letter-spacing: 0.015em;
+	line-height: 1.5;
 
-	@media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
-		font-size: 0.9375rem;
+	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		flex-direction: row;
+		align-items: center;
+		gap: 1.125rem;
+
+		> * + * {
+			padding-left: 1.125rem;
+			border-left: 1px solid rgba(245, 245, 245, 0.2);
+		}
 	}
 `
 
 export const HomepageAddress = styled.address`
 	margin: 0;
 	font-style: normal;
-	font-weight: 300;
-	letter-spacing: 0.02em;
 `
 
 export const HomepageHours = styled.p`
 	margin: 0;
-	color: ${({ theme }) => theme.colors.textSecondary};
-	font-weight: 300;
-	letter-spacing: 0.02em;
 `
 
 export const HomepagePhone = styled.a`
 	color: ${({ theme }) => theme.colors.text};
 	font-weight: 500;
-	letter-spacing: 0.04em;
 	text-decoration: none;
 	transition: color 0.2s ease;
 
