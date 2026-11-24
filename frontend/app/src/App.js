@@ -10,6 +10,7 @@ import Menu from "./Components/Menu/menu"
 import Delivery from "./Components/Delivery/delivery"
 import MailingList from "./Components/MailingList/mailingList"
 import About from "./Components/About/about"
+import Footer from "./Components/Footer/footer"
 import theme from "./theme"
 
 const GlobalStyle = createGlobalStyle`
@@ -92,6 +93,7 @@ const App = ({ menuData, reviewsData }) => {
 				{/* <MailingList /> */}
 				<LineBreak />
 				<About aboutRef={aboutRef}/>
+				<Footer menuRef={menuRef} deliveryRef={deliveryRef} aboutRef={aboutRef} scrollToCorrectHeight={scrollToCorrectHeight}/>
 			</ThemeProvider>
 		</>
   )
