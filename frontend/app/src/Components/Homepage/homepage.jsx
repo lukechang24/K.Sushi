@@ -4,10 +4,10 @@ import * as S from "./homepage.styles"
 const Homepage = ({ menuRef, deliveryRef, scrollToCorrectHeight }) => {
 	return (
 		<S.HomepageSection>
-			<S.Banner>
+			{/* <S.Banner>
 				On Thanksgiving Day (November 26th), we will accept takeout pickups
 				until 12:00 PM. We will be closed for the remainder of the day.
-			</S.Banner>
+			</S.Banner> */}
 
 			<S.HeroContent>
 				<S.HomepageTagline>
@@ -28,7 +28,11 @@ const Homepage = ({ menuRef, deliveryRef, scrollToCorrectHeight }) => {
 			</S.HeroContent>
 
 			<S.HomepageInfoContainer>
-				<S.HomepageAddress>
+				<S.HomepageAddress
+					href="https://www.google.com/maps/dir/?api=1&destination=16436+Norwalk+Blvd%2C+Cerritos%2C+CA+90703"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					16436 Norwalk Blvd, Cerritos, CA 90703
 				</S.HomepageAddress>
 				<S.HomepageHours>

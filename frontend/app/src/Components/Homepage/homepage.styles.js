@@ -1,7 +1,9 @@
 import styled from "styled-components"
+import theme from "../../theme"
 import { IoIosArrowDown } from "react-icons/io"
 
 import heroImage from "../../Images/ksushi_out.jpg"
+
 
 export const HomepageSection = styled.section`
 	--nav-height: 90px;
@@ -185,9 +187,24 @@ export const HomepageInfoContainer = styled.div`
 	}
 `
 
-export const HomepageAddress = styled.address`
-	margin: 0;
-	font-style: normal;
+export const HomepageAddress = styled.a`
+	color: ${theme.colors.textSecondary};
+	cursor: pointer;
+	font-size: 0.875rem;
+	line-height: 1.9;
+	text-decoration: none;
+	transition: color 0.2s ease;
+	width: fit-content;
+
+	&:hover,
+	&:focus-visible {
+		color: ${theme.colors.primary};
+	}
+
+	&:focus-visible {
+		outline: 2px solid ${theme.colors.primary};
+		outline-offset: 3px;
+	}
 `
 
 export const HomepageHours = styled.p`
